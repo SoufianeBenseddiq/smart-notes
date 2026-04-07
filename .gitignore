@@ -1,0 +1,26 @@
+# Environment files - NEVER commit these
+.env
+.env.prod
+.env.local
+.env.*.local
+
+# Only .env.example is safe to commit
+!.env.example
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Backend
+backend/target/
+
+# IDE
+./backend/idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+smart-notes-key.pem

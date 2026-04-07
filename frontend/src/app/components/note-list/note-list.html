@@ -1,0 +1,29 @@
+<div class="page">
+  <header class="header">
+    <span class="logo">📋 SmartNote</span>
+    <span class="tag">DevOps Edition</span>
+  </header>
+
+  <main class="main">
+    <app-note-form (noteAdded)="onNoteAdded($event)"></app-note-form>
+
+    <div class="notes-header">
+      <span class="section-title">// ALL NOTES</span>
+      <span class="count">{{ notes.length }} entries</span>
+    </div>
+
+    <div *ngIf="loading" class="loading">Loading notes...</div>
+
+    <div *ngIf="!loading && notes.length === 0" class="empty">
+      No notes yet. Create your first one above ↑
+    </div>
+
+    <div class="notes-grid">
+      <div class="note-card" *ngFor="let note of notes">
+        <div class="note-id">#{{ note.id }}</div>
+        <h3 class="note-title">{{ note.title }}</h3>
+        <p class="note-content">{{ note.content }}</p>
+      </div>
+    </div>
+  </main>
+</div>

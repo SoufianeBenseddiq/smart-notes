@@ -1,0 +1,14 @@
+<div class="form-card">
+  <h2 class="form-title">+ New Note</h2>
+  <div class="field">
+    <label>Title</label>
+    <input [(ngModel)]="note.title" placeholder="Note title..." />
+  </div>
+  <div class="field">
+    <label>Content</label>
+    <textarea [(ngModel)]="note.content" placeholder="Write your note..." rows="4"></textarea>
+  </div>
+  <button class="btn-save" (click)="submit()" [disabled]="loading">
+    {{ loading ? 'Saving...' : 'Save Note' }}
+  </button>
+</div>
